@@ -5,11 +5,12 @@ password:satepadang
 route dokumentasi:"/doc"
 
 Architecture
-![image](https://user-images.githubusercontent.com/39258245/205448808-55016e16-359d-4549-9650-a19c40b854bb.png)
 
 Kube Result
   -Deployment:
   
+![Arch](https://user-images.githubusercontent.com/39258245/205490107-4714f7e9-973e-4367-93c8-baf9e24e1e20.jpeg)
+
   
   <img width="617" alt="Screen Shot 2022-12-04 at 18 41 09" src="https://user-images.githubusercontent.com/39258245/205489958-ee4ee045-a9a1-4f12-84b1-6d43cd480556.png">
   
