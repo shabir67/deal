@@ -7,3 +7,25 @@ services:
       - 27017:27017
     volumes:
       - ./data/mongo:/data/db
+  auth:
+    container_name: auth
+    build: ./auth
+    ports:
+      - 8080:8080
+    volumes:
+      - ./auth:/auth
+    environment:
+      - PORT=8080
+    depends_on:
+      - mongo
+  usermanagement:
+    container_name: usermanagement
+    build: ./usermanagement
+    ports:
+      - 9090:9090
+    volumes:
+      - ./usermanagement:/usermanagement
+    environment:
+      - PORT=9090
+    depends_on:
+      - mongo

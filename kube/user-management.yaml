@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-management
+spec:
+  selector:
+    app: user-management
+  ports:
+    - port: 9090
+      targetPort: 9090
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-management
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-management
+  template:
+    metadata:
+      labels:
+        app: user-management
+    spec:
+      containers:
+        - name: user-management
+          image: shabir67/deall_usermanagement
+          ports:
+            - containerPort: 9090
+          env:
+            - name: MONGO_URL
+              value: mongodb://mongo:27017/deal_user_db
+          imagePullPolicy: Always
